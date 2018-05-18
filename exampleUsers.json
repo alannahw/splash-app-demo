@@ -1,0 +1,18 @@
+[
+  {
+    "_id": "5ad6f77678e3980ca1ff0122",
+    "name": "Chloe",
+    "settings": {
+      "listView": "thumb",
+      "sortBy": "oldestdate"
+    }
+  },
+  {
+    "_id": "5ad6f6f23a84200c109fa693",
+    "name": "Michael",
+    "settings": {
+      "listView": "thumb",
+      "sortBy": "mostrecentdate"
+    }
+  }
+]
