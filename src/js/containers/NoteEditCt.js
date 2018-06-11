@@ -33,8 +33,6 @@ const ParallaxImgCtStyle = styled.div`
   max-width: 100%;
   height: 66vh;
   overflow: hidden;
-  @media (max-width: 640px) {
-  }
 `;
 const NoteInnerStyle = styled.div`
   max-width: 644px;
@@ -53,54 +51,41 @@ const NoteCtStyle = styled.div`
   width: 100%;
   background: #fff;
   min-height: 100vh;
-
-  @media (max-width: 640px) {
-  }
 `;
-const MenuBtnStyle = BtnStyle.extend`
+
+const IconBtnStyle = BtnStyle.extend`
   position: absolute;
-  top: 20px;
   right: 20px;
   color: #fff;
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
   &:hover {
     color: #fff;
   }
+`;
+const MenuBtnStyle = IconBtnStyle.extend`
+  top: 20px;
   &::after {
     font-family: Ionicons;
     content: "\f20d";
     font-size: 28px;
   }
 `;
-const EmailBtnStyle = BtnStyle.extend`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  color: #fff;
-  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
-  &:hover {
-    color: #fff;
+const TextareaStyle = styled(Textarea)`
+  width: 100%;
+  border: none;
+  resize: none;
+  &::placeholder {
+    color: ${props => props.theme.lightGray};
   }
-  &::after {
-    font-family: Ionicons;
-    content: "\f422";
-    font-size: 32px;
+  &:focus {
+    outline: none;
   }
 `;
-const TitleStyle = styled(Textarea)`
+const TitleStyle = TextareaStyle.extend`
   margin: 20px auto;
   text-align: center;
   font-size: 36px;
   font-family: Arvo;
-  width: 100%;
-  border: none;
-  resize: none;
-  &:focus {
-    outline: none;
-  }
-  &::placeholder {
-    color: ${props => props.theme.lightGray};
-  }
   @media (max-width: 640px) {
     margin: 15px auto;
     font-size: 24px;
@@ -112,23 +97,12 @@ const DateStyle = styled.div`
   font-size: 14px;
   margin-top: 5px;
   color: #ccc;
-  @media (max-width: 640px) {
-  }
 `;
-const BodyStyle = styled(Textarea)`
+const BodyStyle = TextareaStyle.extend`
   margin: 20px auto 120px;
   line-height: 1.5em;
   text-align: left;
   font-size: 16px;
-  width: 100%;
-  border: none;
-  resize: none;
-  &:focus {
-    outline: none;
-  }
-  &::placeholder {
-    color: ${props => props.theme.lightGray};
-  }
   @media (max-width: 640px) {
     margin: 15px auto 60px;
     font-size: 14px;
@@ -173,10 +147,6 @@ class NoteEditCt extends Component {
   handleUpdateNote = note => {
     const { dispatch } = this.props;
     dispatch(updateNote(note));
-  };
-  handleEmailNote = () => {
-    const { currNoteState, dispatch } = this.props;
-    dispatch(emailNote(currNoteState));
   };
   render() {
     const { currNoteState, imgs } = this.props;
