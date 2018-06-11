@@ -172,7 +172,6 @@ class NoteEditCt extends Component {
   };
   handleUpdateNote = note => {
     const { dispatch } = this.props;
-    console.log(note);
     dispatch(updateNote(note));
   };
   handleEmailNote = () => {

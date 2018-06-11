@@ -1,28 +1,56 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+button:focus,
+input:focus {
+  outline: none;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+/* Side Bar Transitions */
+
+.slideInFromRight-enter {
+  transform: translate(300px, 0);
+}
+.slideInFromRight-enter.slideInFromRight-enter-active {
+  transform: translate(0, 0);
+  transition: transform 300ms ease-in;
+}
+.slideInFromRight-exit {
+  transform: translate(0, 0);
+}
+.slideInFromRight-exit.slideInFromRight-exit-active {
+  transform: translate(300px, 0);
+  transition: transform 300ms ease-in;
 }
 
-.App-title {
-  font-size: 1.5em;
+.slideInFromLeft-enter {
+  transform: translate(-300px, 0);
+}
+.slideInFromLeft-enter.slideInFromLeft-enter-active {
+  transform: translate(0, 0);
+  transition: transform 300ms ease-in;
+}
+.slideInFromLeft-exit {
+  transform: translate(0, 0);
+}
+.slideInFromLeft-exit.slideInFromLeft-exit-active {
+  transform: translate(-300px, 0);
+  transition: transform 300ms ease-in;
 }
 
-.App-intro {
-  font-size: large;
-}
+/* END Side Bar Transitions */
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/*.fade-enter {
+  opacity: 0.01;
 }
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 500ms ease-in;
+}*/
